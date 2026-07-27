@@ -1,0 +1,206 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <title>ورود به سامانه - کندا ایده</title>
+    <style>
+        @@font-face {
+            font-family: 'IranYekan';
+            src: url('/fonts/IranYekan/IRANYekanMedium.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @@font-face {
+            font-family: 'IranYekanBold';
+            src: url('/fonts/IranYekan/IRANYekanBold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        @@font-face {
+            font-family: 'IranYekanLight';
+            src: url('/fonts/IranYekan/IRANYekanLight.ttf') format('truetype');
+        }
+        @@font-face {
+            font-family: 'IranYekanExtraBold';
+            src: url('/fonts/IranYekan/IRANYekanExtraBold.ttf') format('truetype');
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { display: flex; height: 100vh; font-family: 'IranYekan', Tahoma; }
+
+        .left {
+            width: 75%;
+            background: #6A50D1;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+        .left h1 { font-family: 'IranYekanBold'; font-size: 32px; }
+        .left p { margin-top: 15px; opacity: 0.9; }
+
+        .right {
+            width: 55%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box {
+            width: 380px;
+            padding: 40px;
+            border-radius: 16px;
+
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 0;
+            margin-bottom: 22px;
+            border: none;
+            border-bottom: 1.5px solid #ddd;
+            border-radius: 0;
+            font-size: 15px;
+            font-family: 'IranYekan';
+            background: transparent;
+            outline: none;
+            color: #333;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-bottom-color: #6A50D1;
+        }
+
+        input::placeholder {
+            color: #b0b0b0;
+            font-family: 'IranYekan';
+        }
+
+        .btn {
+            width: 60%;
+            padding: 13px;
+            border: none;
+            border-radius: 50px;
+            background: #6A50D1;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-family: 'IranYekanExtraBold';
+            text-decoration: none;
+        }
+
+        .error { color: red; margin-bottom: 15px; text-align: center; }
+        .success { color: green; margin-bottom: 15px; text-align: center; }
+
+        .switch {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 14px;
+        }
+        .switch a {
+            color: #6A50D1;
+            text-decoration: none;
+            font-family: 'IranYekanBold';
+        }
+        .question {
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 30px;
+            font-family: 'IranYekan';
+            font-size: 14px;
+        }
+        .buttons{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: large;
+        }
+        .password-wrapper {
+            position: relative;
+            width: 100%;
+            margin-bottom: 22px;
+        }
+
+        .password-wrapper input {
+            width: 100%;
+            padding: 12px 40px 12px 0;   /* فضای خالی سمت چپ برای آیکون */
+            margin-bottom: 0;
+        }
+
+        .toggle-password {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #888;
+            user-select: none;
+            opacity: 0.75;
+            transition: opacity 0.2s;
+        }
+
+        .toggle-password:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="right">
+        <div class="form-box">
+            @if (TempData["Error"] != null)
+            {
+                <div class="error">@TempData["Error"]</div>
+            }
+            @if (TempData["Success"] != null)
+            {
+                <div class="success">@TempData["Success"]</div>
+            }
+
+            <h2 style="text-align:center; margin-bottom:5px; font-family: 'IranYekanExtraBold'; font-size: xx-large;">کندا ایده</h2>
+            <p style="text-align:center; margin-bottom:25px; font-family: 'IranYekanLight'; font-size: medium;">تجربه مهندسی خلاق</p>
+
+            <form method="post" asp-action="Login">
+                <input type="text" name="username" placeholder="نام کاربری" required />
+                <div class="password-wrapper">
+                    <input type="password" name="password" id="password" placeholder="کلمه عبور" required />
+                    <span class="toggle-password" 
+                        onmousedown="showPassword()" 
+                        onmouseup="hidePassword()" 
+                        onmouseleave="hidePassword()">
+                        👁
+                    </span>
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="btn">ورود به سامانه</button>
+                </div>
+                
+            </form>
+            <p class="question">آیا حساب کاربری ندارید؟</p>
+            <div class="buttons"><a asp-action="Register" class="btn" >ساخت حساب کاربری</a></div>
+            
+        </div>
+    </div>
+    <div class="left">
+        <h1>حضور در مگاپروژه‌ها</h1>
+        <p>فعال در تمام ایران</p>
+        <img src="~/img/iran.png" alt="iran" style="margin-top:40px; max-width:280px;">
+    </div>
+    <script>
+        function showPassword() {
+            document.getElementById('password').type = 'text';
+        }
+        function hidePassword() {
+            document.getElementById('password').type = 'password';
+        }
+    </script>
+</body>
+</html>

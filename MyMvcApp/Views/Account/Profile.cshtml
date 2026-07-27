@@ -1,0 +1,152 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <title>اطلاعات کاربری</title>
+    <style>
+        @@font-face {
+            font-family: 'IranYekan';
+            src: url('/fonts/IranYekan/IRANYekanMedium.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @@font-face {
+            font-family: 'IranYekanBold';
+            src: url('/fonts/IranYekan/IRANYekanBold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IranYekan', Tahoma, sans-serif;
+            height: 100vh;
+            display: flex;
+            background: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* سمت راست (بنفش) */
+        .info-section {
+            flex: 1;
+            background-color: #6A50D1;
+            color: white;
+            padding: 50px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+        }
+
+        .info-section h1 {
+            font-family: 'IranYekanBold';
+            font-size: 28px;
+            margin-bottom: 40px;
+            text-align: right;
+        }
+
+        .info-item {
+            font-family: 'IranYekan';
+            font-size: 18px;
+            margin-bottom: 22px;
+            text-align: right;
+            line-height: 1.6;
+        }
+
+        .info-item strong {
+            font-family: 'IranYekanBold';
+            margin-left: 8px;
+        }
+
+        /* سمت چپ (سفید) */
+        .avatar-section {
+            width: 150px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 20px;
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logout-btn {
+            margin-bottom: 40px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .logout-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .logout-btn img {
+            width: 32px;
+            height: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- بخش آواتار و خروج -->
+        <div class="avatar-section">
+            <div class="avatar">
+                <img src="~/img/person.png" alt="avatar" />
+            </div>
+
+            <a href="/Account/Logout" class="logout-btn">
+                <img src="~/img/exit.png" alt="exit" />
+            </a>
+        </div>
+        <!-- بخش اطلاعات (بنفش) -->
+        <div class="info-section">
+            <h1>اطلاعات کاربری</h1>
+
+            <div class="info-item">
+                <strong>نام:</strong> @ViewBag.FirstName
+            </div>
+            <div class="info-item">
+                <strong>نام‌خانوادگی:</strong> @ViewBag.LastName
+            </div>
+            <div class="info-item">
+                <strong>نام کاربری:</strong> @ViewBag.Username
+            </div>
+            <div class="info-item">
+                <strong>ایمیل:</strong> @ViewBag.Email
+            </div>
+            <div class="info-item">
+                <strong>شماره تماس:</strong> @ViewBag.Phone
+            </div>
+        </div>
+    </div>
+</body>
+</html>
