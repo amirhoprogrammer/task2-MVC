@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\سوابق\\کندا ایده\\kandatask2\\github\\task2-MVC\\MyMvcApp\\MyMvcApp.csproj": {}
+    "d:\\سوابق\\کندا ایده\\kandatask2\\github\\task2-MVC\\MyMvcApp\\MyMvcApp.csproj": {}
   },
   "projects": {
-    "D:\\سوابق\\کندا ایده\\kandatask2\\github\\task2-MVC\\MyMvcApp\\MyMvcApp.csproj": {
+    "d:\\سوابق\\کندا ایده\\kandatask2\\github\\task2-MVC\\MyMvcApp\\MyMvcApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\سوابق\\کندا ایده\\kandatask2\\github\\task2-MVC\\MyMvcApp\\MyMvcApp.csproj",
+        "projectUniqueName": "d:\\سوابق\\کندا ایده\\kandatask2\\github\\task2-MVC\\MyMvcApp\\MyMvcApp.csproj",
         "projectName": "MyMvcApp",
-        "projectPath": "D:\\سوابق\\کندا ایده\\kandatask2\\github\\task2-MVC\\MyMvcApp\\MyMvcApp.csproj",
+        "projectPath": "d:\\سوابق\\کندا ایده\\kandatask2\\github\\task2-MVC\\MyMvcApp\\MyMvcApp.csproj",
         "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
-        "outputPath": "D:\\سوابق\\کندا ایده\\kandatask2\\github\\task2-MVC\\MyMvcApp\\obj\\",
+        "outputPath": "d:\\سوابق\\کندا ایده\\kandatask2\\github\\task2-MVC\\MyMvcApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Home\\AppData\\Roaming\\NuGet\\NuGet.Config"
